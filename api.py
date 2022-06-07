@@ -1,4 +1,5 @@
 import requests
+import re
 
 def getUsrId(usr):
     try:
