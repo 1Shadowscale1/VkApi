@@ -21,7 +21,8 @@ def getStatus(id, token):
 def getGroupsCount(id, token):
     a = requests.get("https://api.vk.com/method/groups.get?user_id=" +
     id + "&" + "access_token=" + token + "&v=5.131").text.split("[")
-    return(a[0][21:23])
+    regexp = re.compile("\d+")
+    return(regexp.findall(a[0])[0])
 
         
 def main():
